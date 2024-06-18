@@ -1,0 +1,41 @@
+doctype html
+head
+
+	title Enigma! Tienda de botas
+
+	meta(charset='UTF-8')
+
+	meta(name='viewport' content='width=device-width, initial-scale=1.0')
+
+	link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+
+	link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css')
+
+	link(rel='stylesheet', href='/css/style.css')
+
+body
+	div.topbar
+	nav.navbar.navbar-expand-lg
+		a.navbar-brand(href='/profile')
+			i.fas.fa-user-circle.fa-2x
+		div.navbar-nav.ml-auto
+			a.navbar-brand(href='#')
+				img(src='./img/logo.jpeg', width=90)
+		div.navbar-nav.ml-auto
+			a.nav-link(href='#')
+				i.fas.fa-shopping-cart.fa-2x 
+	div.division
+
+	block content
+
+	div.whatsapp
+		i.fab.fa-whatsapp-square
+	div.division(style='margin-top:15px;')
+	div.footer
+		p Tienda Enigma de botas
+		p Contacto: 
+		p Email: 
+
+	script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
+	script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js')
+	script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
