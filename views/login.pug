@@ -1,0 +1,35 @@
+extends layout
+
+block content
+
+	div.container
+
+		div.titulo
+			br
+			h2 Bienvenido al sistema de autenticación de usuarios
+			h5 Completa el siguiente formulario
+			br
+
+		div.d-flex.align-items-center.justify-content-center.form-wrapper
+			form.formulario(action='/auth/login', method='POST')
+				div.form-group
+					label(for='email') Email
+					input.form-control#email(type='email',required, name='email')
+				div.form-group
+					label(for='password') Contraseña
+					input.form-control#password(type='password',required, name='password')
+				div.form-group
+					button.btn.btn-primary(type='submit') Autenticarse
+		if message
+			div.alert.alert-danger.alert-dismissible.fade.show.mt-3(role="alert", id='autoDismissAlert')
+				p=message
+				button.close(type='button', data-dismiss='alert', aria-label='Close')
+					span(aria-hidden='true') &times;
+
+	script.
+		setTimeout(function(){
+			const alert = document.getElementById('autoDismissAlert')
+			if(alert){
+				alert.remove()
+			}
+		},3000)

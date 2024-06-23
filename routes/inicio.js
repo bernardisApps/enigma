@@ -1,10 +1,15 @@
 const express = require('express')
 const router = express.Router()
-//const getUsers = require('../controllers/userController')
 
-//router.get('/', getUsers)
+
 router.get('/', (req,res)=>{
-	res.render('home')
+	const user = req.session.user || null
+	/*user = {
+		name:'matias',
+		email:'matias@matias.com',
+		id: 1,
+	}*/
+	res.render('home', {user})
 })
 
 module.exports = router

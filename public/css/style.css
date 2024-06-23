@@ -1,9 +1,8 @@
+@import url('home.css');
+@import url('login.css');
+
 body{
 	overflow-x: hidden;
-}
-
-.banner img{
-	width: 100%;
 }
 
 .division{
@@ -22,28 +21,33 @@ body{
 .topbar{
 	width: 100vw;
 	height: 40px;
-	background-color: blue;
+	background-color: #375CB7;
+	color: white;
+	display: flex;
 }
 
-.img-banner{
-	-webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 100%);
-            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 100%);
-}
-
-.lista{
-	margin-top: -30px;
-}
-
-.card{
-	box-shadow: 0px 10px 10px lightgray;
+.user-info{
+	margin-left: 10px;
+	text-align: center;
+	font-size: 1.5em;
 }
 
 .whatsapp{
+	padding:0px 6px;
+	background-color: #fff;
+	border:1px solid lightgray;
+	border-radius: 10px;
+	box-shadow: 0px 2px 5px lightgray;
 	color: #25D366;
-	font-size: 48px;
+	font-size: 35px;
 	position: fixed;
-	right: 60px;
-	bottom: 40px;
+	right: 30px;
+	bottom: 30px;
+	transition: font-size 0.3s ease-in-out;
+}
+
+.whatsapp:hover{
+	font-size: 50px;
 }
 
 @media (min-width:768px){
@@ -52,19 +56,24 @@ body{
 	}
 }
 
-.carta{
-	margin-bottom: 10px;
-	width: 100%;
-	aspect-ratio: 1/1;
-	border:solid 1px lightgray;
-	border-radius: 10px;
-	background-color: #fff;
-	box-shadow: 0px 2px 5px lightgray;
-}
+
 
 .footer{
 	padding: 20px;
 	text-align: center;
-	background-color: blue;
+	background-color: #375CB7;
 	color:white;
+}
+
+.menu-user{
+	text-align: center;
+	background-color: #fff;
+	width: 200px;
+	height: 300px;
+	border: solid 1px lightgray;
+	position: absolute;
+	top:100px;
+	left:10px;
+	z-index: 1000;
+	box-shadow: 0px 2px 5px lightgray;
 }

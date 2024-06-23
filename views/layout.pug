@@ -16,21 +16,37 @@ head
 body
 	div.topbar
 	nav.navbar.navbar-expand-lg
-		a.navbar-brand(href='/profile')
-			i.fas.fa-user-circle.fa-2x
+		if user
+			a.navbar-brand(href=`#`, title=`${user.name}` onclick='mostrar()' )
+				i.fas.fa-user-circle.fa-2x
+		else
+			a.navbar-brand(href='/auth')
+				i.fas.fa-user-circle.fa-2x
 		div.navbar-nav.ml-auto
-			a.navbar-brand(href='#')
-				img(src='./img/logo.jpeg', width=90)
+			a.navbar-brand(href='/')
+				img(src='/img/logo.jpeg', width=90)
 		div.navbar-nav.ml-auto
 			a.nav-link(href='#')
 				i.fas.fa-shopping-cart.fa-2x 
 	div.division
 
+	div.menu-user.d-none#menu-user
+		div.container
+			if user
+				br
+				p Hola #{user.name}
+				hr
+				a(href='/auth/logout')
+					p Cerrar Sesión
+				hr
+
 	block content
 
-	div.whatsapp
-		i.fab.fa-whatsapp-square
+	div.whatsapp(title='Envíanos un whatsapp')
+		i.fab.fa-whatsapp-square(style='margin:0px;')
+
 	div.division(style='margin-top:15px;')
+
 	div.footer
 		p Tienda Enigma de botas
 		p Contacto: 
@@ -39,3 +55,13 @@ body
 	script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
 	script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js')
 	script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
+	script.
+		const menu_user = document.getElementById('menu-user')
+		const mostrar = ()=>{
+			if (menu_user.classList.contains('d-none')){
+				menu_user.classList.remove('d-none')	
+			}else{
+				menu_user.classList.add('d-none')
+			}
+			
+		}
